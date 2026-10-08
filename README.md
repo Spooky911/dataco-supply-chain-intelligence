@@ -6,7 +6,9 @@ We built a seven-page Power BI report to explore those questions, then created a
 
 ## Where the project stands
 
-The Desktop report and PDF are finished and checked. Publishing them to Power BI Service and GitHub is still waiting for account access. Scheduled refresh has not been set up.
+The Desktop report and PDF are finished and checked. The report has been uploaded to Power BI Service. The university tenant currently blocks public embed-code creation, so the service report requires authorized access. Scheduled refresh has not been set up.
+
+[Open the Power BI Service report](https://app.powerbi.com/groups/me/reports/174da804-c5fc-4a33-9e25-aa6b3cb25593/Executive) · [GitHub repository](https://github.com/Spooky911/dataco-supply-chain-intelligence)
 
 The owner has chosen to make the report, repository and dataset public. Readers will be able to access the data through the CSV and PBIX. Power BI **Publish to web** can also expose underlying model data, even when a visual does not display it. See [Microsoft's publication guidance](https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-publish-to-web).
 
@@ -92,13 +94,15 @@ The 27-page PDF contains business analysis and complete appendices for 164 count
 
 We rendered and visually inspected all 27 pages for clipping, overlap and legibility. We checked the appendix row ranges and confirmed that the final month was included. We verified that the full order CSV contains 65,752 unique order identifiers and that its sales and profit reconcile to source totals. We packaged the PDF and companion tables together.
 
-### 12. Get ready to publish
+### 12. Publish the project
 
-The local package is ready, with 146 files covering the original 92.3 MB CSV, PBIX, editable source, PDF, exports and documentation. The owner chose public access to both the report and dataset.
+We signed in to Power BI Service and uploaded the verified PBIX to My workspace. The service created both the report and its semantic model. Opening the executive page confirmed 33.05M net booked sales, 3.97M recorded profit, 12.0% margin and a 57.3% late-delivery rate, matching the Desktop results. All seven pages are listed in the service.
 
-Power BI currently requires account setup or sign-in, and GitHub's repository-creation page requires browser sign-in. Once access is available, we still need to upload the PBIX to the chosen workspace, check the service report and its interactions, and confirm whether the tenant permits Publish to web. We can then create and verify the public link, upload the package to a public GitHub repository and add the working report link here.
+We then tried File → Embed report → Publish to web (public). Power BI returned: “Contact your admin to enable embed code creation.” Public access remains blocked until the university tenant administrator permits new public embed codes. The service link above is therefore an authenticated report link, not an anonymous public link.
 
-Those publication steps are still pending. There is no verified public report link yet.
+We created the public GitHub repository under Spooky911. A command-line push failed because the local Git credential helper could not run, so we used the signed-in browser to upload the deliverables. The 92.3 MB source CSV exceeds GitHub's browser upload limit; we compressed it into an 18.2 MB ZIP. The editable project and supporting exports are in a separate archive. The PBIX, PDF and README are directly accessible at the repository root.
+
+The owner chose public access to the dataset as well as the report. Enabling anonymous Power BI viewing is the remaining publication step and requires the tenant administrator; it cannot be completed from the report owner's current controls.
 
 ## What the results show
 
@@ -117,17 +121,17 @@ Europe and LATAM together contribute approximately 57.5% of net booked sales. Fi
 
 ## Files
 
-- `report/`: loaded PBIX, editable PBIP and adjacent model/report folders, DAX, Power Query, reconciliation and verification records.
-- `pdf/`: the 27-page print edition.
-- `data/derived/`: complete analytical CSV exports and companion notes.
-- `docs/`: the business insight brief.
-- `scripts/`: local profiling, report generation and print verification scripts for implementation inspection.
+- `DataCo.pbix`: the loaded seven-page Desktop report.
+- `DataCo Print Report.pdf`: the 27-page print edition.
+- `DataCo-Source-Data.zip`: the original CSV, under `data/raw/` after extraction.
+- `DataCo-Editable-Project.zip`: the PBIP source, DAX, Power Query, verification records, insight brief, scripts and complete analytical exports.
+- `README.md`: the project walkthrough you are reading.
 
-The original CSV is included under `data/raw/`. The scripts document how the project was built. They retain local paths and dependencies, so they need adjustment before running on another machine.
+Extract the project archive to preserve its `report/`, `docs/`, `scripts/` and `data/derived/` folders. The scripts document how the project was built and retain local paths and dependencies that need adjustment on another machine.
 
 ## Open and refresh
 
-Open `report/DataCo.pbix` in Power BI Desktop. It contains the loaded model. For a new refresh, update the CSV path in the Fact query's Advanced Editor to your local source location, preserving its encoding and date locale. Keep `DataCo.pbip`, `DataCo.Report` and `DataCo.SemanticModel` adjacent when editing the source project.
+Open `DataCo.pbix` in Power BI Desktop. It contains the loaded model. For a new refresh, update the CSV path in the Fact query's Advanced Editor to your local source location, preserving its encoding and date locale. Keep `DataCo.pbip`, `DataCo.Report` and `DataCo.SemanticModel` adjacent when editing the source project.
 
 The print PDF and CSV exports are historical snapshots. Refreshing Desktop does not automatically regenerate them. Scheduled cloud refresh has not been configured; a local file source requires an appropriate service refresh arrangement before a schedule can work.
 
@@ -147,3 +151,4 @@ The print PDF and CSV exports are historical snapshots. Refreshing Desktop does 
 - [PDF export behavior](https://learn.microsoft.com/en-us/power-bi/collaborate-share/end-user-pdf)
 - [Publish to web](https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-publish-to-web)
 - [Paginated reports for future print automation](https://learn.microsoft.com/en-us/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
+
