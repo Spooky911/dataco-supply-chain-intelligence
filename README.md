@@ -6,8 +6,6 @@ We built a seven-page Power BI report to explore those questions, then created a
 
 ## Where the project stands
 
-. The report has been uploaded to Power BI Service. The university tenant currently blocks public embed-code creation, so the service report requires authorized access. Scheduled refresh has not been set up.
-
 [Open the Power BI Service report](https://app.powerbi.com/groups/me/reports/174da804-c5fc-4a33-9e25-aa6b3cb25593/Executive) · [GitHub repository](https://github.com/Spooky911/dataco-supply-chain-intelligence)
 
 The owner has chosen to make the report, repository and dataset public. Readers will be able to access the data through the CSV and PBIX. Power BI **Publish to web** can also expose underlying model data, even when a visual does not display it. See [Microsoft's publication guidance](https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-publish-to-web).
