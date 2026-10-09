@@ -20,7 +20,7 @@ The owner has chosen to make the report, repository and dataset public. Readers 
 
 ## The data we worked with
 
-The supplied file is `DataCoSupplyChainDataset.csv`. Its original local location was `E:\Analysis project supply chain\raw data`. The analysis covers 1 January 2015 through 31 January 2018, with 180,519 order-item records, 65,752 distinct orders, 20,652 customers and 384,079 units.
+The supplied file is `SupplyChainDataset.csv`. The analysis covers 1 January 2015 through 31 January 2018, with 180,519 order-item records, 65,752 distinct orders, 20,652 customers and 384,079 units.
 
 We worked from the supplied file. Its upstream attribution and redistribution license have not been independently verified, so this project does not claim a license over the original data.
 
